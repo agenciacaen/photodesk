@@ -15,11 +15,21 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
+import type { Viewport } from "next";
+
 export const metadata: Metadata = {
   title: "PhotoDesk - Gestão de Ensaios Fotográficos",
   description: "Plataforma SaaS multitenancy para fotógrafos publicarem ensaios com IA.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    title: "PhotoDesk",
+    statusBarStyle: "black-translucent",
+  },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#e8c97e",
+};
 export default function RootLayout({
   children,
 }: Readonly<{
